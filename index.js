@@ -18,7 +18,9 @@ async function getWeatherData(cityValue) {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityValue}&appid=${apikey}&units=metric`)
 
         if(!response.ok){ //if response is error
+            console.log("error");
             throw new Error("Network response was not ok");
+            
         }
 
         const data = await response.json();
